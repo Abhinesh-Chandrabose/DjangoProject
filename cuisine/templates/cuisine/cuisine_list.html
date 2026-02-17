@@ -1,0 +1,17 @@
+{% extends "cuisine/base.html" %}
+
+{% block content %}
+<h1>Cuisine App Sample</h1>
+{% for cuisine in cuisines%}
+{{cuisine.id}}
+<h2>{{cuisine.name}}</h2>    
+<a href="{% url 'Cuisine_Cuisine_detaillist' cuisine.id %}">View Details</a>
+<p>Published On: {{cuisine.created}}</p>
+<p>type  :{{cuisine.type}}
+    catgory : {{cuisine.catg}}</p>
+    {{cuisine.status}}
+{% endfor %}
+
+{% include "pagination.html" with page=cuisines %}
+</div>
+{% endblock %}
